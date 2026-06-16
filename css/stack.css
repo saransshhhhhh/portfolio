@@ -1,0 +1,323 @@
+/* ============================================================
+   STACK PAGE — Tech Arsenal
+   ============================================================ */
+
+.stack-page {
+  min-height: 100dvh;
+  background: var(--bg-deep);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.stack-header {
+  padding: 48px 52px 36px;
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.stack-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 72px);
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.stack-title-dim { color: var(--text-dim); }
+
+.stack-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-align: right;
+  line-height: 1.8;
+}
+
+/* ── TABLE ──────────────────────────────────────────────────── */
+.stack-body {
+  flex: 1;
+  padding: 44px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stack-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0.5px solid var(--border-mid);
+}
+
+.stack-row {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  border-bottom: 0.5px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--ease-expo), transform 0.5s var(--ease-expo);
+}
+
+.stack-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Row background wipe on hover */
+.stack-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 100%;
+  background: rgba(10,21,64,0.5);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 0;
+  transition: transform 0.45s var(--ease-expo);
+  pointer-events: none;
+}
+
+.stack-row:hover::before { transform: scaleX(1); }
+
+.stack-row:last-child {
+  border-bottom: none;
+}
+
+/* Section header row */
+.stack-row.section-header {
+  background: var(--bg-surface);
+  border-bottom: 0.5px solid var(--border-mid);
+}
+
+.stack-row.section-header .stack-row-label,
+.stack-row.section-header .stack-row-content {
+  color: var(--text-dim);
+}
+
+/* ── ROW CELLS ──────────────────────────────────────────────── */
+.stack-row-label {
+  padding: 22px 28px;
+  border-right: 0.5px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: color var(--dur-fast);
+}
+
+.stack-row:hover .stack-row-label {
+  color: var(--text-mid);
+}
+
+.stack-row.section-header .stack-row-label {
+  font-size: 9px;
+  color: rgba(255,255,255,0.2);
+}
+
+.stack-row-content {
+  padding: 22px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.tech-chip {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-mid);
+  padding: 5px 11px;
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+  position: relative;
+  z-index: 1;
+}
+
+.tech-chip:hover {
+  color: var(--text-primary);
+  border-color: var(--border-mid);
+  background: rgba(255,255,255,0.03);
+}
+
+.tech-chip.accent {
+  color: var(--accent);
+  border-color: rgba(79,140,255,0.28);
+}
+
+.tech-chip.accent:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+/* ── EDUCATION ROW ──────────────────────────────────────────── */
+.edu-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edu-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.edu-detail {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  color: var(--text-dim);
+}
+
+.edu-cgpa {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.cgpa-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+/* ── CERT ROW ───────────────────────────────────────────────── */
+.cert-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cert-badge {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: 0.5px solid var(--border-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.cert-name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-mid);
+}
+
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-left: auto;
+}
+
+/* ── SUMMARY BAR ────────────────────────────────────────────── */
+.stack-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 0.5px solid var(--border-mid);
+  margin-top: 48px;
+}
+
+.summary-stat {
+  padding: 24px 0;
+  text-align: center;
+  border-right: 0.5px solid var(--border);
+}
+
+.summary-stat:last-child { border-right: none; }
+
+.summary-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 36px;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  display: block;
+}
+
+.summary-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .stack-header { padding: 32px 24px 28px; }
+  .stack-body { padding: 32px 24px; }
+  .stack-row { grid-template-columns: 1fr; }
+  .stack-row-label {
+    border-right: none;
+    border-bottom: 0.5px solid var(--border);
+    padding: 14px 18px;
+  }
+  .stack-row-content { padding: 14px 18px; }
+  .stack-summary { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .stack-header {
+    padding: 28px 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .stack-title { font-size: clamp(22px, 7.5vw, 42px); }
+  .stack-meta {
+    text-align: left;
+  }
+  .stack-body { padding: 24px 20px; }
+  .stack-row-label { font-size: 9px; }
+  .tech-chip { font-size: 9.5px; padding: 4px 9px; }
+  .cert-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .cert-issuer {
+    margin-left: 0;
+  }
+  .summary-num { font-size: 28px; }
+  .stack-summary { grid-template-columns: 1fr 1fr; }
+}

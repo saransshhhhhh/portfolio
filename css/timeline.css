@@ -1,0 +1,343 @@
+/* ============================================================
+   TIMELINE PAGE v2
+   Fix: Redesigned from broken 3-col grid to a clean
+   single-column layout with a left-edge accent line.
+   Much more reliable across all screen sizes.
+   ============================================================ */
+
+.timeline-page {
+  min-height: 100dvh;
+  background: var(--bg-deep);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.tl-header {
+  padding: 48px 52px 36px;
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.tl-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(34px, 5vw, 72px);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: var(--text-primary);
+}
+
+.tl-title-dim { color: var(--text-dim); }
+
+.tl-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-align: right;
+  line-height: 1.9;
+  flex-shrink: 0;
+}
+
+/* ── BODY CONTAINER ─────────────────────────────────────────── */
+.tl-body {
+  flex: 1;
+  padding: 56px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* ── CONTINUOUS VERTICAL LINE ───────────────────────────────── */
+/* Drawn with a pseudo-element on the container */
+.tl-body::before {
+  content: '';
+  position: absolute;
+  left: calc(52px + 140px); /* align with date column right edge */
+  top:    56px;
+  bottom: 56px;
+  width:  0.5px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--border-mid) 5%,
+    var(--border-mid) 95%,
+    transparent 100%
+  );
+}
+
+/* ── ENTRY BLOCK ────────────────────────────────────────────── */
+.tl-entry {
+  display: grid;
+  grid-template-columns: 140px 40px 1fr;
+  gap: 0;
+  margin-bottom: 56px;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s var(--ease-expo), transform 0.6s var(--ease-expo);
+}
+
+.tl-entry.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── DATE COLUMN ────────────────────────────────────────────── */
+.tl-date-col {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  gap: 6px;
+}
+
+.tl-date-range {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  text-align: right;
+  line-height: 1.2;
+}
+
+.tl-date-badge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 2px 7px;
+  border: 0.5px solid rgba(79,140,255,0.3);
+  border-radius: 2px;
+  background: rgba(79,140,255,0.07);
+}
+
+/* ── NODE COLUMN ────────────────────────────────────────────── */
+.tl-node-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.tl-node-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--bg-deep);
+  border: 1.5px solid var(--border-mid);
+  position: relative;
+  z-index: 2;
+  transition: border-color var(--dur-mid), background var(--dur-mid), box-shadow var(--dur-mid);
+  flex-shrink: 0;
+}
+
+.tl-entry.current .tl-node-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79,140,255,0.2), 0 0 14px rgba(79,140,255,0.4);
+}
+
+/* ── CONTENT COLUMN ─────────────────────────────────────────── */
+.tl-content-col {
+  padding-left: 24px;
+  padding-bottom: 8px;
+}
+
+.tl-company {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 34px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.tl-role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.tl-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.tl-bullets li {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.55;
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 8px;
+}
+
+.tl-bullets li::before {
+  content: '·';
+  color: var(--border-bright);
+  margin-top: -1px;
+}
+
+.tl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tl-tag {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 3px 8px;
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.tl-entry:hover .tl-tag {
+  color: var(--text-mid);
+  border-color: var(--border-mid);
+}
+
+/* ── CALLOUT BLOCK ──────────────────────────────────────────── */
+.tl-callout-row {
+  display: grid;
+  grid-template-columns: 140px 40px 1fr;
+  gap: 0;
+  margin-bottom: 48px;
+
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s var(--ease-expo) 0.15s, transform 0.6s var(--ease-expo) 0.15s;
+}
+
+.tl-callout-row.visible { opacity: 1; transform: translateY(0); }
+
+.tl-callout-row .tl-date-col { padding-top: 20px; }
+
+.tl-callout-row .tl-node-col { padding-top: 22px; }
+
+.tl-callout {
+  grid-column: 3;
+  margin-left: 24px;
+  padding: 20px 22px;
+  border: 0.5px solid var(--border-mid);
+  border-left: 2px solid var(--accent);
+  background: linear-gradient(135deg, rgba(79,140,255,0.07) 0%, transparent 100%);
+  border-radius: 0 2px 2px 0;
+}
+
+.tl-callout-label {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tl-callout-label::before { content: '◈'; font-size: 10px; }
+
+.tl-callout-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.tl-callout-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tl-callout-items li {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tl-callout-items li::before { content: '→'; color: var(--accent); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tl-header { padding: 32px 24px 28px; }
+
+  .tl-body {
+    padding: 40px 24px;
+  }
+
+  .tl-body::before {
+    left: calc(24px + 80px); /* adjusted for mobile date col width */
+  }
+
+  .tl-entry,
+  .tl-callout-row {
+    grid-template-columns: 80px 32px 1fr;
+    margin-bottom: 40px;
+  }
+
+  .tl-date-range { font-size: 10px; }
+  .tl-company { font-size: clamp(18px, 5vw, 26px); }
+  .tl-content-col { padding-left: 16px; }
+  .tl-callout { margin-left: 16px; }
+}
+
+@media (max-width: 600px) {
+  .tl-header { flex-direction: column; align-items: flex-start; }
+  .tl-title { font-size: clamp(22px, 7.5vw, 42px); }
+  .tl-meta { text-align: left; }
+
+  .tl-body { padding: 32px 20px; }
+  .tl-body::before { display: none; }
+
+  .tl-entry,
+  .tl-callout-row {
+    grid-template-columns: 1fr;
+    margin-bottom: 36px;
+  }
+
+  .tl-node-col { display: none; }
+
+  .tl-date-col {
+    align-items: flex-start;
+    padding-right: 0;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 14px;
+  }
+
+  .tl-content-col { padding-left: 0; }
+  .tl-callout { margin-left: 0; grid-column: 1; }
+  .tl-callout-row .tl-date-col { padding-top: 0; }
+}

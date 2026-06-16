@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Saransh Middha — Full Stack Developer based in Pune, India. Available for full-time roles and freelance projects.">
+  <meta name="theme-color" content="#020617">
+  <title>Contact — Saransh Middha</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<!-- Interactive Preloader -->
+<div id="preloader" class="preloader">
+  <div class="preloader-grid"></div>
+  <div class="preloader-scanline"></div>
+  <div class="preloader-inner">
+    <div class="preloader-canvas-wrap">
+      <canvas id="preloaderCanvas"></canvas>
+    </div>
+    <div class="preloader-info">
+      <div class="preloader-monogram">SM SYSTEM v2.6</div>
+      <div class="preloader-log" id="preloaderLog">INITIALIZING CORE...</div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-status-row">
+        <span class="preloader-percent" id="preloaderPercent">00%</span>
+        <span class="preloader-interactive-hint">[ CLICK / SPACE TO HACK ]</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="noise-overlay"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-monogram" aria-label="Home">SM</a>
+  <a href="index.html"    class="nav-link" id="nav-home">Home</a>
+  <a href="work.html"     class="nav-link" id="nav-work">Work</a>
+  <a href="labs.html"     class="nav-link" id="nav-labs">Labs</a>
+  <a href="timeline.html" class="nav-link" id="nav-timeline">Timeline</a>
+  <a href="stack.html"    class="nav-link" id="nav-stack">Stack</a>
+  <a href="contact.html"  class="nav-link active" id="nav-contact">Contact</a>
+</nav>
+
+<main class="contact-page page" role="main">
+
+  <!-- Background ghost text -->
+  <div class="contact-ghost" aria-hidden="true">CONNECT</div>
+
+  <!-- Header -->
+  <header class="contact-header">
+    <p class="contact-section-num label-mono">06 / CONTACT</p>
+    <div class="contact-availability">
+      <span class="status-dot" aria-hidden="true"></span>
+      AVAILABLE · FULL-TIME &amp; FREELANCE
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="contact-main">
+
+    <p class="contact-eyebrow">Let's collaborate</p>
+
+    <h1 class="contact-heading">
+      LET'S BUILD<br>
+      <span class="line2">SOMETHING</span><br>
+      EXTRAORDINARY
+    </h1>
+
+    <!-- Email -->
+    <a href="mailto:saranshmiddha101@gmail.com"
+       class="contact-email-wrap"
+       id="contact-email-link"
+       aria-label="Send email to saranshmiddha101@gmail.com">
+      <span class="contact-email" id="contactEmailText">
+        saranshmiddha101@gmail.com
+        <span class="email-arrow" aria-hidden="true">↗</span>
+      </span>
+    </a>
+
+    <!-- Info Row -->
+    <div class="contact-info-row">
+      <a href="tel:+918574707000" class="contact-info-item" id="contact-phone-link" aria-label="Call Saransh Middha">
+        <svg class="contact-info-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M13 10.33v1.67a1.11 1.11 0 01-1.21 1.11A10.99 10.99 0 011 2.21 1.11 1.11 0 012.11 1h1.67a1.11 1.11 0 011.11.95c.1.73.3 1.45.57 2.14a1.11 1.11 0 01-.25 1.17L4.45 6.04a8.89 8.89 0 003.51 3.51l.78-.77a1.11 1.11 0 011.17-.25c.69.28 1.41.47 2.14.57A1.11 1.11 0 0113 10.33z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        +91 8574707000
+      </a>
+
+      <div class="contact-sep" aria-hidden="true"></div>
+
+      <span class="contact-info-item">
+        <svg class="contact-info-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M7 1C4.24 1 2 3.24 2 6c0 3.5 5 7 5 7s5-3.5 5-7c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 117 4a1.5 1.5 0 010 3.5z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Kothrud, Pune, Maharashtra
+      </span>
+
+      <div class="contact-sep" aria-hidden="true"></div>
+
+      <span class="contact-info-item">
+        <svg class="contact-info-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1"/>
+          <path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        Available Immediately
+      </span>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/xandybzn" method="POST" class="contact-form-block" id="contactForm">
+      <div class="contact-form-row">
+        <input type="text" name="fullname" placeholder="Full Name" required class="contact-input" id="inputName">
+        <input type="email" name="email" placeholder="Email Address" required class="contact-input" id="inputEmail">
+      </div>
+      <textarea name="message" placeholder="Your Message" required class="contact-input contact-textarea" id="inputMessage"></textarea>
+      <button type="submit" class="btn-ghost contact-submit" id="btnSend">
+        <span>Send Message</span>
+        <span>↗</span>
+      </button>
+    </form>
+
+    <!-- Social Links -->
+    <div class="contact-socials" role="list" aria-label="Social links">
+      <a href="https://linkedin.com/in/saranshmiddha" target="_blank" rel="noopener"
+         class="social-link" role="listitem" id="social-linkedin" aria-label="LinkedIn profile">LI</a>
+      <a href="https://github.com/saransshhhhhh" target="_blank" rel="noopener"
+         class="social-link" role="listitem" id="social-github" aria-label="GitHub profile">GH</a>
+      <a href="mailto:saranshmiddha101@gmail.com"
+         class="social-link" role="listitem" id="social-email" aria-label="Send email">✉</a>
+    </div>
+
+  </section>
+
+  <!-- Divider -->
+  <div class="contact-divider" aria-hidden="true"></div>
+
+  <!-- Footer -->
+  <footer class="contact-footer">
+    <p class="footer-copy">© 2026 SARANSH MIDDHA · ALL RIGHTS RESERVED</p>
+  </footer>
+
+</main>
+
+<script src="js/main.js"></script>
+
+<script>
+// Letter-by-letter hover on email
+(function() {
+  const emailEl = document.getElementById('contactEmailText');
+  if (!emailEl) return;
+  const emailText = 'saranshmiddha101@gmail.com';
+  // Wrap each char in a span
+  emailEl.innerHTML = emailText.split('').map((c, i) =>
+    `<span class="email-char" style="transition:color 0.3s ${i * 0.018}s">${c === '@' ? '@' : c}</span>`
+  ).join('') + ' <span class="email-arrow" aria-hidden="true">↗</span>';
+
+  const wrap = document.querySelector('.contact-email-wrap');
+  const chars = emailEl.querySelectorAll('.email-char');
+
+  wrap.addEventListener('mouseenter', () => {
+    chars.forEach(c => c.style.color = 'var(--accent)');
+  });
+  wrap.addEventListener('mouseleave', () => {
+    chars.forEach(c => c.style.color = '');
+  });
+})();
+</script>
+
+</body>
+</html>

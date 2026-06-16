@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Independent Labs & Projects by Saransh Middha — Adaptive Hearing Aid Filter, Virtual Kiosk, Ultrasonic Vision Glasses, Hand Gesture Recognition, Object Detection & more.">
+  <meta name="theme-color" content="#050b24">
+  <title>Labs — Saransh Middha</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/labs.css">
+</head>
+<body>
+
+<!-- Interactive Preloader -->
+<div id="preloader" class="preloader">
+  <div class="preloader-grid"></div>
+  <div class="preloader-scanline"></div>
+  <div class="preloader-inner">
+    <div class="preloader-canvas-wrap">
+      <canvas id="preloaderCanvas"></canvas>
+    </div>
+    <div class="preloader-info">
+      <div class="preloader-monogram">SM SYSTEM v2.6</div>
+      <div class="preloader-log" id="preloaderLog">INITIALIZING CORE...</div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-status-row">
+        <span class="preloader-percent" id="preloaderPercent">00%</span>
+        <span class="preloader-interactive-hint">[ CLICK / SPACE TO HACK ]</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="noise-overlay"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-monogram" aria-label="Home">SM</a>
+  <a href="index.html"    class="nav-link" id="nav-home">Home</a>
+  <a href="work.html"     class="nav-link" id="nav-work">Work</a>
+  <a href="labs.html"     class="nav-link active" id="nav-labs">Labs</a>
+  <a href="timeline.html" class="nav-link" id="nav-timeline">Timeline</a>
+  <a href="stack.html"    class="nav-link" id="nav-stack">Stack</a>
+  <a href="contact.html"  class="nav-link" id="nav-contact">Contact</a>
+</nav>
+
+<main class="labs page" role="main">
+
+  <!-- Header -->
+  <header class="labs-header">
+    <div>
+      <p class="label-mono" style="margin-bottom:16px;">03 / INDEPENDENT LABS</p>
+      <h1 class="labs-title">
+        SYSTEMS<br>
+        <span class="labs-title-dim">&amp; LABS</span>
+      </h1>
+    </div>
+    <p class="labs-desc">
+      DEEP-TECH<br>ENGINEERING<br>PROJECTS BUILT<br>INDEPENDENTLY
+    </p>
+  </header>
+
+  <!-- Split Body -->
+  <div class="labs-body">
+
+    <!-- Left Column: Enterprise Engineering -->
+    <section class="labs-col" aria-label="Enterprise Engineering projects">
+
+      <div class="term-header">
+        <div class="term-dots">
+          <div class="term-dot"></div>
+          <div class="term-dot"></div>
+          <div class="term-dot"></div>
+        </div>
+        <span class="term-title">enterprise_engineering.sh</span>
+      </div>
+
+      <p class="col-label">
+        <span class="prompt">~/</span>ENTERPRISE_ENGINEERING<span class="tree-name-slash">/</span>
+        <span class="blink-cursor" aria-hidden="true"></span>
+      </p>
+
+      <div class="tree-root" role="list">
+
+        <!-- Secure Password Manager -->
+        <div class="tree-item" role="listitem" tabindex="0">
+          <div class="tree-item-header" role="button" aria-expanded="false" aria-controls="pm-detail">
+            <span class="tree-connector" aria-hidden="true">├──</span>
+            <span class="tree-name">
+              secure-password-manager
+              <span class="tree-name-slash">/</span>
+              <span class="tree-expand-icon" aria-hidden="true">▶</span>
+            </span>
+          </div>
+          <div class="tree-detail" id="pm-detail" aria-hidden="true">
+            <div class="tree-tech-row">
+              <span class="tree-tech">C#</span>
+              <span class="tree-tech">AES-256</span>
+              <span class="tree-tech">Custom Ciphers</span>
+              <span class="tree-tech">.NET</span>
+            </div>
+            <p class="tree-description">
+              Multi-tier encrypted password vault using custom substitution cipher layered over AES-256. Implements a novel two-pass encryption scheme for credential storage with zero plaintext persistence.
+            </p>
+            <span class="tree-view-btn">VIEW PROJECT ↗</span>
+          </div>
+        </div>
+
+        <!-- UK E-Sports Platform -->
+        <div class="tree-item" role="listitem" tabindex="0">
+          <div class="tree-item-header" role="button" aria-expanded="false" aria-controls="esports-detail">
+            <span class="tree-connector" aria-hidden="true">├──</span>
+            <span class="tree-name">
+              uk-esports-platform
+              <span class="tree-name-slash">/</span>
+              <span class="tree-expand-icon" aria-hidden="true">▶</span>
+            </span>
+          </div>
+          <div class="tree-detail" id="esports-detail" aria-hidden="true">
+            <div class="tree-tech-row">
+              <span class="tree-tech">Bootstrap</span>
+              <span class="tree-tech">MySQL</span>
+              <span class="tree-tech">PHP</span>
+              <span class="tree-tech">Tournament Logic</span>
+            </div>
+            <p class="tree-description">
+              Full-featured tournament management platform for the UK e-sports community. Features real-time bracket generation, player statistics tracking, and team management with a custom PHP backend on MySQL.
+            </p>
+            <span class="tree-view-btn">VIEW PROJECT ↗</span>
+          </div>
+        </div>
+
+        <!-- Virtual Kiosk Website -->
+        <div class="tree-item" role="listitem" tabindex="0">
+          <div class="tree-item-header" role="button" aria-expanded="false" aria-controls="kiosk-detail">
+            <span class="tree-connector" aria-hidden="true">├──</span>
+            <span class="tree-name">
+              virtual-kiosk-website
+              <span class="tree-name-slash">/</span>
+              <span class="tree-expand-icon" aria-hidden="true">▶</span>
+            </span>
+          </div>
+          <div class="tree-detail" id="kiosk-detail" aria-hidden="true">
+            <div class="tree-tech-row">
+              <span class="tree-tech">Web Dev</span>
+              <span class="tree-tech">Interactive Tour</span>
+              <span class="tree-tech">JavaScript</span>
+            </div>
+            <p class="tree-description">
+              Immersive virtual tour platform for Jnana Prabodhini — enabling full digital campus experiences. Live at <a href="https://www.jnanaprabodhini.org/virtualkiosk/" target="_blank" rel="noopener" style="color:var(--accent)">VirtualKiosk</a> and <a href="https://nisargamitra.org/" target="_blank" rel="noopener" style="color:var(--accent)">Nisargamitra.org</a>
+            </p>
+            <a href="https://www.jnanaprabodhini.org/virtualkiosk/" target="_blank" rel="noopener" class="tree-view-btn">VIEW LIVE ↗</a>
+          </div>
+        </div>
+
+        <!-- Vanilla PHP MicroCRUD -->
+        <div class="tree-item" role="listitem" tabindex="0">
+          <div class="tree-item-header" role="button" aria-expanded="false" aria-controls="crud-detail">
+            <span class="tree-connector" aria-hidden="true">└──</span>
+            <span class="tree-name">
+              vanilla-php-microcrud
+              <span class="tree-name-slash">/</span>
+              <span class="tree-expand-icon" aria-hidden="true">▶</span>
+            </span>
+          </div>
+          <div class="tree-detail" id="crud-detail" aria-hidden="true">
+            <div class="tree-tech-row">
+              <span class="tree-tech">PHP</span>
+              <span class="tree-tech">Zero Dependencies</span>
+              <span class="tree-tech">RESTful</span>
+              <span class="tree-tech">MySQL</span>
+            </div>
+            <p class="tree-description">
+              A production-ready micro-framework in native PHP with zero third-party dependencies. Implements a full RESTful API layer, middleware pipeline, and query builder without any external libraries.
+            </p>
+            <span class="tree-view-btn">VIEW PROJECT ↗</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="labs-col-divider" aria-hidden="true"></div>
+
+    <!-- Right Column: Advanced Intelligence -->
+    <section class="labs-col" aria-label="Advanced Intelligence projects">
+
+      <div class="term-header">
+        <div class="term-dots">
+          <div class="term-dot"></div>
+          <div class="term-dot"></div>
+          <div class="term-dot"></div>
+        </div>
+        <span class="term-title">advanced_intelligence.sh</span>
+      </div>
+
+      <p class="col-label">
+        <span class="prompt">~/</span>ADVANCED_INTELLIGENCE<span class="tree-name-slash">/</span>
+        <span class="blink-cursor" aria-hidden="true"></span>
+      </p>
+
+      <div class="tree-root" role="list">
+
+        <!-- Adaptive Hearing Aid Filter -->
+        <div class="tree-item" role="listitem" tabindex="0">
+          <div class="tree-item-header" role="button" aria-expanded="false" aria-controls="hearing-detail">
+            <span class="tree-connector" aria-hidden="true">├──</span>
+            <span class="tree-name">
+              adaptive-hearing-aid-filter
+              <span class="tree-name-slash">/</span>
+              <span class="tree-expand-icon" aria-hidden="true">▶</span>
+            </span>
+          </div>
+          <div class="tree-detail" id="hearing-detail" aria-hidden="true">
+            <div class="tree-tech-row">
+              <span class="tree-tech">Q-Learning</span>
+              <span class="tree-tech">Reinforcement Learning</span>
+              <span class="tree-tech">DSP</span>
+              <span class="tree-tech">MATLAB</span>
+            </div>
+            <p class="tree-description">
+              AI-driven self-learning adaptive noise filter for hearing aids. Uses Q-Learning reinforcement feedback to autonomously tune frequency response curves in real time, improving speech clarity by adapting to unique environments without manual calibration.
+            </p>
+            <span class="tree-view-btn">VIEW PROJECT ↗</span>
+          </div>
+        </div>
+
+        <!-- Hand Gesture Recognition -->
+        <div class="tree-item" role="listitem" tabindex="0">
+          <div class="tree-item-header" role="button" aria-expanded="false" aria-controls="gesture-detail">
+            <span class="tree-connector" aria-hidden="true">├──</span>
+            <span class="tree-name">
+              hand-gesture-recognition
+              <span class="tree-name-slash">/</span>
+              <span class="tree-expand-icon" aria-hidden="true">▶</span>
+            </span>
+          </div>
+          <div class="tree-detail" id="gesture-detail" aria-hidden="true">
+            <div class="tree-tech-row">
+              <span class="tree-tech">Android</span>
+              <span class="tree-tech">MediaPipe</span>
+              <span class="tree-tech">Machine Learning</span>
+            </div>
+            <p class="tree-description">
+              Android app using MediaPipe's hand tracking for real-time gesture recognition, enabling interactive applications and sign language interpretation.
+            </p>
+            <span class="tree-view-btn">VIEW PROJECT ↗</span>
+          </div>
+        </div>
+
+        <!-- Ultrasonic Vision Glasses -->
+        <div class="tree-item" role="listitem" tabindex="0">
+          <div class="tree-item-header" role="button" aria-expanded="false" aria-controls="glasses-detail">
+            <span class="tree-connector" aria-hidden="true">└──</span>
+            <span class="tree-name">
+              ultrasonic-vision-glasses
+              <span class="tree-name-slash">/</span>
+              <span class="tree-expand-icon" aria-hidden="true">▶</span>
+            </span>
+          </div>
+          <div class="tree-detail" id="glasses-detail" aria-hidden="true">
+            <div class="tree-tech-row">
+              <span class="tree-tech">MediaPipe</span>
+              <span class="tree-tech">Object Detection</span>
+              <span class="tree-tech">OpenCV</span>
+              <span class="tree-tech">Python</span>
+            </div>
+            <p class="tree-description">
+              Assistive wearable for the visually impaired. Combines ultrasonic proximity sensing with MediaPipe real-time object detection to deliver spatial audio cues for obstacle avoidance and navigation.
+            </p>
+            <span class="tree-view-btn">VIEW PROJECT ↗</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
